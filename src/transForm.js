@@ -61,6 +61,9 @@
                 if (el.checked)
                     value = el.value === 'on' ? true : el.value;
                 break;
+            case 'number':
+                value = Number(el.value);
+                break;
             case 'checkbox':
                 value = el.checked ? (el.value === 'on' ? true : el.value) : false;
                 break;
@@ -81,7 +84,7 @@
             default:
                 value = el.value;
         }
-        return { name: key, value: value };
+        return {name: key, value: value};
     }
 
     function getTextEntryFromInput(el, textKey) {
